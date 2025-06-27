@@ -25,7 +25,7 @@ export const useDiscordRpc = () => {
             previous: (number | PlayerStatus | QueueSong | undefined)[],
         ) => {
             // No current song, or we switched to a new track and the player was paused (end of album, etc.)
-            if (!current[0] || (current[0] && current[2] === 'paused' && current[1] === 0))
+            if (!current[0] || (current[0] && current[2] === 'paused') || current[1] === 0)
                 return discordRpc?.clearActivity();
 
             // Handle change detection
