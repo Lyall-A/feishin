@@ -127,6 +127,7 @@ export const useDiscordRpc = () => {
         [
             discordSettings.showAsListening,
             discordSettings.showServerImage,
+            discordSettings.showPaused,
             generalSettings.lastfmApiKey,
             lastUniqueId,
         ],
