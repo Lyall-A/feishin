@@ -136,8 +136,18 @@ export const useDiscordRpc = () => {
     useEffect(() => {
         if (!discordSettings.enabled) return discordRpc?.quit();
 
-        discordRpc?.initialize(discordSettings.clientId);
+        let timeout: any;
+        (async function initialize() {
+            // Checks RPC status every 10 seconds, initializes if needed
+            const isConnected = await discordRpc?.isConnected();
+            if (!isConnected) {
+                discordRpc?.initialize(discordSettings.clientId);
+            }
+            timeout = setTimeout(initialize, 10000);
+        })();
+
         return () => {
+            clearTimeout(timeout);
             discordRpc?.quit();
         };
     }, [discordSettings.clientId, discordSettings.enabled]);
