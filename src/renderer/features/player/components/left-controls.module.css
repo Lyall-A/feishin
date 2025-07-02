@@ -41,6 +41,11 @@
     }
 }
 
+.playerbar-image-container {
+    width: 100%;
+    height: 100%;
+}
+
 .playerbar-image {
     display: flex;
     align-items: center;

@@ -91,11 +91,13 @@ export const LeftControls = () => {
                                     })}
                                     openDelay={500}
                                 >
-                                    <Image
-                                        className={styles.playerbarImage}
-                                        loading="eager"
-                                        src={currentSong?.imageUrl ?? ''}
-                                    />
+                                    <div className={styles.playerbarImageContainer}>
+                                        <Image
+                                            className={styles.playerbarImage}
+                                            loading="eager"
+                                            src={currentSong?.imageUrl ?? ''}
+                                        />
+                                    </div>
                                 </Tooltip>
                                 {!collapsed && (
                                     <ActionIcon

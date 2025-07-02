@@ -197,11 +197,13 @@ export const Sidebar = () => {
                             })}
                             openDelay={500}
                         >
-                            <Image
-                                className={styles.sidebarImage}
-                                loading="eager"
-                                src={upsizedImageUrl || ''}
-                            />
+                            <div className={styles.sidebarImageContainer}>
+                                <Image
+                                    className={styles.sidebarImage}
+                                    loading="eager"
+                                    src={upsizedImageUrl || ''}
+                                />
+                            </div>
                         </Tooltip>
                         <ActionIcon
                             icon="arrowDownS"
