@@ -15,6 +15,10 @@ const createClient = (clientId?: string) => {
     return client;
 };
 
+const isConnected = () => {
+    return client?.isConnected;
+};
+
 const setActivity = (activity: SetActivity) => {
     if (client) {
         client.user?.setActivity({
@@ -39,6 +43,10 @@ ipcMain.handle('discord-rpc-initialize', (_event, clientId?: string) => {
     createClient(clientId);
 });
 
+ipcMain.handle('discord-rpc-is-connected', () => {
+    return isConnected();
+});
+
 ipcMain.handle('discord-rpc-set-activity', (_event, activity: SetActivity) => {
     if (client) {
         setActivity(activity);
@@ -58,6 +66,7 @@ ipcMain.handle('discord-rpc-quit', () => {
 export const discordRpc = {
     clearActivity,
     createClient,
+    isConnected,
     quit,
     setActivity,
 };
