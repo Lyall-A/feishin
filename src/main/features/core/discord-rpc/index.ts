@@ -5,12 +5,12 @@ const FEISHIN_DISCORD_APPLICATION_ID = '1165957668758900787';
 
 let client: Client | null = null;
 
-const createClient = (clientId?: string) => {
+const createClient = async (clientId?: string) => {
     client = new Client({
         clientId: clientId || FEISHIN_DISCORD_APPLICATION_ID,
     });
 
-    client.login();
+    await client.login();
 
     return client;
 };
@@ -39,8 +39,8 @@ const quit = () => {
     }
 };
 
-ipcMain.handle('discord-rpc-initialize', (_event, clientId?: string) => {
-    createClient(clientId);
+ipcMain.handle('discord-rpc-initialize', async (_event, clientId?: string) => {
+    await createClient(clientId);
 });
 
 ipcMain.handle('discord-rpc-is-connected', () => {
