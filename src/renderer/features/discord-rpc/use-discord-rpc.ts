@@ -141,7 +141,6 @@ export const useDiscordRpc = () => {
     useEffect(() => {
         if (!discordSettings.enabled) return discordRpc?.quit();
 
-        discordRpc?.initialize(discordSettings.clientId);
         return () => {
             discordRpc?.quit();
         };
