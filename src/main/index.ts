@@ -377,7 +377,7 @@ async function createWindow(first = true): Promise<void> {
         mainWindow?.webContents.downloadURL(url);
     });
 
-    const globalMediaKeysEnabled = store.get('global_media_hotkeys', true) as boolean;
+    const globalMediaKeysEnabled = store.get('global_media_hotkeys', false) as boolean;
 
     if (globalMediaKeysEnabled) {
         enableMediaKeys(mainWindow);
@@ -515,7 +515,7 @@ async function createWindow(first = true): Promise<void> {
     }
 }
 
-app.commandLine.appendSwitch('disable-features', 'HardwareMediaKeyHandling,MediaSessionService');
+// app.commandLine.appendSwitch('disable-features', 'HardwareMediaKeyHandling,MediaSessionService');
 
 // https://github.com/electron/electron/issues/46538#issuecomment-2808806722
 app.commandLine.appendSwitch('gtk-version', '3');
@@ -594,7 +594,7 @@ ipcMain.on(
             }
         }
 
-        const globalMediaKeysEnabled = store.get('global_media_hotkeys', true) as boolean;
+        const globalMediaKeysEnabled = store.get('global_media_hotkeys', false) as boolean;
 
         if (globalMediaKeysEnabled) {
             enableMediaKeys(mainWindow);

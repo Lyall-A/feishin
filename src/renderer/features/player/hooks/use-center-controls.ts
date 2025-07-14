@@ -619,7 +619,7 @@ export const useCenterControls = (args: { playersRef: any }) => {
     ]);
 
     useEffect(() => {
-        if (!isElectron() && mediaSession) {
+        if (mediaSession) {
             mediaSession.setActionHandler('nexttrack', () => {
                 handleNextTrack();
             });
