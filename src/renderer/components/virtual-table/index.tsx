@@ -28,6 +28,7 @@ import { ActionsCell } from '/@/renderer/components/virtual-table/cells/actions-
 import { AlbumArtistCell } from '/@/renderer/components/virtual-table/cells/album-artist-cell';
 import { ArtistCell } from '/@/renderer/components/virtual-table/cells/artist-cell';
 import { CombinedTitleCell } from '/@/renderer/components/virtual-table/cells/combined-title-cell';
+import { ExplicitCell } from '/@/renderer/components/virtual-table/cells/explicit-cell';
 import { FavoriteCell } from '/@/renderer/components/virtual-table/cells/favorite-cell';
 import { GenericCell } from '/@/renderer/components/virtual-table/cells/generic-cell';
 import { GenreCell } from '/@/renderer/components/virtual-table/cells/genre-cell';
@@ -216,6 +217,18 @@ const tableColumns: { [key: string]: ColDef } = {
         valueGetter: (params: ValueGetterParams) =>
             params.data ? params.data.duration : undefined,
         width: 70,
+    },
+    explicitStatus: {
+        cellRenderer: ExplicitCell,
+        colId: TableColumn.EXPLICIT_STATUS,
+        field: 'explicitStatus',
+        headerComponent: (params: IHeaderParams) =>
+            GenericTableHeader(params, { position: 'center' }),
+        headerName: i18n.t('table.column.explicitStatus'),
+        suppressSizeToFit: true,
+        valueGetter: (params: ValueGetterParams) =>
+            params.data ? params.data.explicitStatus : undefined,
+        width: 90,
     },
     genre: {
         cellRenderer: GenreCell,

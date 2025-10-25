@@ -779,7 +779,8 @@
             "size": "$t(common.size)",
             "songCount": "$t(entity.track_other)",
             "title": "title",
-            "trackNumber": "track"
+            "trackNumber": "track",
+            "explicitStatus": "explicit"
         },
         "config": {
             "general": {
@@ -820,7 +821,8 @@
                 "title": "$t(common.title)",
                 "titleCombined": "$t(common.title) (combined)",
                 "trackNumber": "track number",
-                "year": "$t(common.year)"
+                "year": "$t(common.year)",
+                "explicitStatus": "$t(common.explicitStatus)"
             },
             "view": {
                 "card": "card",

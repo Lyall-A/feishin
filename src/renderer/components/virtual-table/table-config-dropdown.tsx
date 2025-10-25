@@ -60,6 +60,10 @@ export const SONG_TABLE_COLUMNS = [
         value: TableColumn.TRACK_NUMBER,
     },
     {
+        label: i18n.t('table.config.label.explicitStatus', { postProcess: 'titleCase' }),
+        value: TableColumn.EXPLICIT_STATUS,
+    },
+    {
         label: i18n.t('table.config.label.bitrate', { postProcess: 'titleCase' }),
         value: TableColumn.BIT_RATE,
     },
@@ -142,6 +146,10 @@ export const ALBUM_TABLE_COLUMNS = [
     {
         label: i18n.t('table.config.label.songCount', { postProcess: 'titleCase' }),
         value: TableColumn.SONG_COUNT,
+    },
+    {
+        label: i18n.t('table.config.label.explicitStatus', { postProcess: 'titleCase' }),
+        value: TableColumn.EXPLICIT_STATUS,
     },
     {
         label: i18n.t('table.config.label.genre', { postProcess: 'titleCase' }),

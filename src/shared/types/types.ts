@@ -148,6 +148,7 @@ export enum TableColumn {
     DATE_ADDED = 'dateAdded',
     DISC_NUMBER = 'discNumber',
     DURATION = 'duration',
+    EXPLICIT_STATUS = 'explicitStatus',
     GENRE = 'genre',
     LAST_PLAYED = 'lastPlayedAt',
     OWNER = 'username',

@@ -101,7 +101,7 @@ import {
     LuVolumeX,
     LuX,
 } from 'react-icons/lu';
-import { MdOutlineVisibility, MdOutlineVisibilityOff } from 'react-icons/md';
+import { MdExplicit, MdOutlineVisibility, MdOutlineVisibilityOff } from 'react-icons/md';
 import { RiPlayListAddLine, RiRepeat2Line, RiRepeatOneLine } from 'react-icons/ri';
 import { SiMusicbrainz } from 'react-icons/si';
 
@@ -144,6 +144,7 @@ export const AppIcon = {
     ellipsisVertical: LuEllipsisVertical,
     emptyImage: LuImageOff,
     error: LuShieldAlert,
+    explicit: MdExplicit,
     externalLink: LuExternalLink,
     favorite: LuHeart,
     filter: LuListFilter,

@@ -45,6 +45,12 @@
     white-space: nowrap;
 }
 
+.artist-wrapper {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
 .skeleton-metadata {
     height: var(--theme-font-size-md);
 }

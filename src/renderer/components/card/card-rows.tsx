@@ -167,6 +167,11 @@ export const ALBUM_CARD_ROWS: { [key: string]: CardRow<Album> } = {
         format: (album) => (album.duration === null ? null : formatDuration(album.duration)),
         property: 'duration',
     },
+    explicitStatus: {
+        format: (album) =>
+            album.explicitStatus === 1 ? 'Explicit' : album.explicitStatus === 2 ? 'Clean' : null,
+        property: 'explicitStatus',
+    },
     lastPlayedAt: {
         format: (album) => formatDateRelative(album.lastPlayedAt),
         property: 'lastPlayedAt',
@@ -227,6 +232,11 @@ export const SONG_CARD_ROWS: { [key: string]: CardRow<Song> } = {
     duration: {
         format: (song) => (song.duration === null ? null : formatDuration(song.duration)),
         property: 'duration',
+    },
+    explicitStatus: {
+        format: (song) =>
+            song.explicitStatus === 1 ? 'Explicit' : song.explicitStatus === 2 ? 'Clean' : null,
+        property: 'explicitStatus',
     },
     lastPlayedAt: {
         format: (song) => formatDateRelative(song.lastPlayedAt),
